@@ -127,7 +127,7 @@ select {
     background-color: transparent;
 }
 
-/*UC 6*/
+/* UC 6*/
 .buttonParent {
     display: flex;
     margin-bottom: 10px;
@@ -159,4 +159,44 @@ select {
 .cancelButton {
     text-decoration: none;
     text-align: center;
+}
+
+/*UC 7*/
+@media only screen and(max-width:600px) {
+    .form {
+        margin-top: 10px;
+
+    }
+
+    .row-content {
+        flex-direction: column;
+    }
+
+    .profile-radio-content {
+        flex-flow: wrap;
+    }
+
+    .submit-reset {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .submitButton {
+        margin: 0;
+    }
+
+    .buttonParent {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    } 
+}
+
+error-output{
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
 }
