@@ -125,4 +125,38 @@ select {
     letter-spacing: 0px;
     color: #42515f;
     background-color: transparent;
-    }
+}
+
+/*UC 6*/
+.buttonParent {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    font-size: 20px;
+    font-family: Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+    background-color:#d6d7ec;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.submitButton {
+    background-color:#6f76fa;
+    color: #00060a;
+    margin-right: 0px;
+}
+
+.cancelButton {
+    text-decoration: none;
+    text-align: center;
+}
