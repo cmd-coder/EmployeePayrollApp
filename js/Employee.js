@@ -35,14 +35,7 @@ const save=()=>{
 
 const createEmployeePayroll=()=>{
     let empPayrollData=new PayrollModel();
-    try{
-        empPayrollData.name=getInputValueById('#name');
-    }
-    catch(e)
-    {
-        setTextValue('.text-error',e);
-        throw e;
-    }
+    empPayrollData.name=getInputValueById('#name');
     empPayrollData.profilePic=getSelectedValues('[name=profile]').pop();
     empPayrollData.gender=getSelectedValues('[name=gender]').pop();
     empPayrollData.department=getSelectedValues('[name=department]');
