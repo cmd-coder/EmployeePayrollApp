@@ -67,3 +67,8 @@ const getInputValueById=(id)=>{
     let value=document.querySelector(id).value;
     return value;
 }
+
+const getInputElementValue=()=>{
+    let value=document.getElementById(id).value;
+    return value;
+}
