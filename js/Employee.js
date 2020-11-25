@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded' , (event)=> {
         catch(e){
             textError.textContent=e;
         }
-    })
+    });
 });
 
 const save=()=>{
