@@ -3,7 +3,13 @@ class PayrollModel{
     set id(id){this._id=id;}
 
     get name(){return this._name;}
-    set name(name){this._name=name;}
+    set name(name){
+        let nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if(nameRegex.test(name))
+            this._name=name;
+        else
+            throw 'Name is not correct';
+        }
 
     get profilePic(){return this._profilePic;}
     set profilePic(profilePic){this._profilePic=profilePic;}
@@ -21,7 +27,13 @@ class PayrollModel{
     set note(note){this._note=note;}
 
     get startDate(){return this._startDate;}
-    set startDate(startDate){this._startDate=startDate;}
+    set startDate(startDate){
+        var date=new Date();
+        if(startDate>date)
+            throw 'Date is Incorrect';
+        else
+            this._startDate=startDate;
+    }
 
     toString()
     {
