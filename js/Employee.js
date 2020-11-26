@@ -106,8 +106,3 @@ const unsetSelectedValues=(propertyValue)=>{
         item.checked=false;
     });
 }
-
-const setValue=(id,value)=>{
-    const element=document.querySelector(id);
-    element.textContent=value;
-}
