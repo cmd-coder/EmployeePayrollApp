@@ -30,9 +30,11 @@ class PayrollModel{
     set startDate(startDate){
         var date=new Date();
         if(startDate>date)
-            throw 'Date is Incorrect';
-        else
-            this._startDate=startDate;
+            throw 'Date is a future date';
+        var diff=Math.abs(date.getTime()-startDate.getTime());
+        if(diff/(1000*60*60*24)>30)
+            throw 'Start Date is beyond 30 days';
+        this._startDate=startDate;
     }
 
     toString()

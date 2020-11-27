@@ -36,6 +36,11 @@ const save=()=>{
 
 const createEmployeePayroll=()=>{
     let empPayrollData=new PayrollModel();
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(employeePayrollList==undefined)
+        empPayrollData.id=1;
+    else
+        empPayrollData.id=employeePayrollList.length+1;
     empPayrollData.name=getInputValueById('#name');
     empPayrollData.profilePic=getSelectedValues('[name=profile]').pop();
     empPayrollData.gender=getSelectedValues('[name=gender]').pop();
