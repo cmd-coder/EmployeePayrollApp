@@ -44,5 +44,19 @@ const remove=(node)=>{
     const index=employeePayrollList.map(empData=>empData._id).indexOf(empPayrollData._id);
     employeePayrollList.splice(index,1);
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+    document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+}
+
+const update=(node)=>{
+    //employeePayrollList = getEmployeePayrollDataFromStorage();
+    /*let empPayrollData=employeePayrollList.find(empData=>empData._id==node._id);
+    if(!empPayrollData)
+        return;
+    localStorage.setItem('editEmp', JSON.stringify(empPayrollData));
+    window.location.replace(site_properties.add_emp_payroll_page);*/
+    let empData = employeePayrollList.find((emp) => emp._id == node.id);
+    if (!empData) return;
+    localStorage.setItem("editEmp", JSON.stringify(empData));
+    window.location.replace(site_properties.add_emp_payroll_page);
 }
