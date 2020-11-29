@@ -3,14 +3,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     employeePayrollList = getEmployeePayrollDataFromStorage();
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+    localStorage.removeItem('editEmp');
 });
 const getEmployeePayrollDataFromStorage = () => {
     return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
 }
 const createInnerHtml = () => {
     const headerHtml = "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th></tr>"
-    if (employeePayrollList.length == 0) return;
     let innerHtml = `${headerHtml}`;
+    if (employeePayrollList.length != 0)
     for (const employeePayrollData of employeePayrollList) {
         innerHtml = `${innerHtml}
         <tr>
@@ -49,12 +50,6 @@ const remove=(node)=>{
 }
 
 const update=(node)=>{
-    //employeePayrollList = getEmployeePayrollDataFromStorage();
-    /*let empPayrollData=employeePayrollList.find(empData=>empData._id==node._id);
-    if(!empPayrollData)
-        return;
-    localStorage.setItem('editEmp', JSON.stringify(empPayrollData));
-    window.location.replace(site_properties.add_emp_payroll_page);*/
     let empData = employeePayrollList.find((emp) => emp._id == node.id);
     if (!empData) return;
     localStorage.setItem("editEmp", JSON.stringify(empData));

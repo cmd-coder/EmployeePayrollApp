@@ -26,7 +26,7 @@
 
     <!-- UC2 -->
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save(); return false">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event); return false">
           <!-- UC 2 -->
           <div class="form-head"> Employee Payroll form </div>
           <div class="row-content">
@@ -96,7 +96,7 @@
       <!-- UC 5-->
       <div class="row-content">
         <label class="label text" for="startDate">Start Date</label>
-        <div>
+        <div id="date">
             <select id="day" name="Day" required>
                 <option>Day</option>
                 <option value="1">1</option>
@@ -157,6 +157,7 @@
                 <option value="2014">2014</option>
             </select>
         </div>
+        <error-output class="date-error" for="startDate"></error-output>
     </div>
     <!-- UC 6-->
     <div class="row-content">
